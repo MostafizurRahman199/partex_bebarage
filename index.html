@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Ad - 300x480</title>
+    <style>
+
+
+        
+        @font-face {
+            font-family: 'BanglaFont';
+            src: url('fonts/myfont.ttf') format('truetype');
+            font-weight: lighter;
+            font-style: normal;
+        }
+
+        .bangla-text {
+            font-family: 'BanglaFont', 'Noto Sans Bengali', sans-serif !important;
+        }
+
+      
+        body {
+            font-family: 'MyCustomFont', sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f9fa;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .ad-container {
+            width: 300px;
+            height: 480px;
+            background-color: white;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* background-image: url("images/bg6.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover; */
+
+            background: linear-gradient(90deg, #00416a, #c5c7c8);
+        }
+
+        .ad-text {
+            padding: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            /* display: hidden; */
+        }
+
+        .ad-image {
+            flex-grow: 1;
+            width: 60%;
+            height: 60%;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .ad-time {
+            padding: 15px;
+            font-size: 16px;
+            color: white;
+            background-color: #007bff;
+        }
+
+        /* Different animations */
+        @keyframes slideFromCenter {
+            0% {
+                opacity: 0;
+                transform: scale(0) translate(0, 0);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) translate(0, 0);
+            }
+        }
+
+        @keyframes zoomIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes rotateIn {
+            0% {
+                opacity: 0;
+                transform: rotate(-360deg);
+            }
+            100% {
+                opacity: 1;
+                transform: rotate(0deg);
+            }
+        }
+
+        @keyframes slideInFromLeft {
+            0% {
+                opacity: 0;
+                transform: translateX(-100%);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-100px);
+            }
+            50% {
+                transform: translateY(40px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes shake {
+            0% {
+                transform: translateX(0);
+            }
+            25% {
+                transform: translateX(-10px);
+            }
+            50% {
+                transform: translateX(10px);
+            }
+            75% {
+                transform: translateX(-10px);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInFromTop {
+            0% {
+                opacity: 0;
+                transform: translateY(-100%);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes scaleUp {
+            0% {
+                opacity: 0;
+                transform: scale(0);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+
+.ad-text {
+    padding: 12px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #ffcc00; /* Golden color for a festive look */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    /* background: linear-gradient(90deg, #00416a, #e4e5e6);  */
+    /* Stylish gradient */
+    border-radius: 8px;
+    /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); */
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    animation: glow  1.5s infinite alternate;
+}
+
+/* Glowing animation */
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00;
+        transform: scale(1);  /* Original size */
+    }
+    100% {
+        text-shadow: 0 0 20px #ffdd44, 0 0 30px #ffdd44;
+        transform: scale(1.1); /* Scaled up */
+    }
+}
+
+
+
+.ad-time {
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(90deg, #008080, #005f5f); /* Elegant gradient */
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: dropdown 1s ease-out forwards;
+}
+
+/* Smooth dropdown animation */
+@keyframes dropdown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.countdown-text{
+    color: #ffcc00;
+}
+
+.time-box {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+}
+
+.time-box div {
+    background-color: #ffcc00;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    width: 40px;
+    text-align: center;
+    color: black;
+    border: 1px solid white;
+    margin-bottom: 10px;
+}
+
+
+    </style>
+</head>
+<body>
+
+    <div class="ad-container">
+        <div class="ad-text bangla-text">🌙  রামাদান কারিম </div>
+        <div class="ad-image"></div>
+        <!-- <div class="ad-time bangla-text">🕌 Iftari: <b>6:15 PM</b> | Shehri: <b>4:50 AM</b></div> -->
+        <div class="right-timer">
+            <div class="countdown-text  bangla-text" id="countdown-text">ইফতারের সময় বাকি:</div>
+            <div class="time-box">
+                <div id="hours">00</div>
+                <div id="minutes">00</div>
+                <div id="seconds">00</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Array of image filenames
+        const imageCount = 16;
+        const adImage = document.querySelector('.ad-image');
+
+        let currentImageIndex = 1;
+
+        // Array of animation classes
+        const animations = [
+            'slideFromCenter',
+            'zoomIn',
+            'rotateIn',
+            'slideInFromLeft',
+            'fadeIn',
+            'bounceIn',
+            'shake',
+            'slideInFromTop',
+            'scaleUp'
+        ];
+
+        // Function to change image with random animation
+        function changeImage() {
+            // Randomly pick an animation
+            const randomAnimation = animations[Math.floor(Math.random() * animations.length)];
+
+            // Set the random animation
+            adImage.style.animation = `${randomAnimation} 1s ease-in-out`;
+
+            // Change the image after the animation starts
+            adImage.style.backgroundImage = `url('images/d${currentImageIndex}.png')`;
+
+            // Reset opacity to 0 to apply the animation again
+            setTimeout(() => {
+                adImage.style.opacity = 1;
+            }, 100);
+
+            currentImageIndex++;
+
+            if (currentImageIndex > imageCount) {
+                currentImageIndex = 1;  // Reset to the first image
+            }
+        }
+
+        // Change image every 3 seconds
+        setInterval(changeImage, 3000);
+
+        // Initial image load
+        changeImage();
+
+
+
+
+function updateCountdown() {
+    let now = new Date();
+    let iftarTime = new Date();
+    let sehriTime = new Date();
+    
+    iftarTime.setHours(18, 30, 0);  // Example: Iftar at 6:30 PM
+    sehriTime.setHours(4, 45, 0);   // Example: Sehri at 4:45 AM
+
+    let targetTime = now.getHours() >= 4 && now.getHours() < 18 ? iftarTime : sehriTime;
+    let diff = targetTime - now;
+    
+    let hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    let minutes = Math.floor((diff / (1000 * 60)) % 60);
+    let seconds = Math.floor((diff / 1000) % 60);
+
+    let text = now.getHours() >= 4 && now.getHours() < 18 ? "ইফতারের সময় বাকি:" : "সেহেরীর সময় বাকি:";
+    document.getElementById("countdown-text").innerText = text;
+    document.getElementById("hours").innerText = String(hours).padStart(2, "0");
+    document.getElementById("minutes").innerText = String(minutes).padStart(2, "0");
+    document.getElementById("seconds").innerText = String(seconds).padStart(2, "0");
+}
+setInterval(updateCountdown, 1000);
+
+    </script>
+
+</body>
+</html>
